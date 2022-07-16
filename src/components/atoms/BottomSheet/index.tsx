@@ -14,12 +14,12 @@ function BottomSheet({isVisible, onClickBackDrop, children}: BottomSheetProps) {
       <div
         onClick={onClickBackDrop}
         className={`${
-          !isVisible && 'invisible'
+          !isVisible && 'hidden'
         } absolute inset-0 bg-gray-500 opacity-70 z-10`}
       />
       <div
         className={`${
-          !isVisible && 'invisible'
+          !isVisible && 'hidden'
         } absolute bottom-0 z-20 inset-x-0 flex justify-center items-center`}>
         {children}
       </div>

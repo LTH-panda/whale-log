@@ -1,9 +1,10 @@
 import {POST_EMPTY_MESSAGE} from 'commons/constants/string';
+import {Post} from 'pages';
 import React from 'react';
-import PostCard, {PostCardProps} from '../PostCard';
+import PostCard from '../PostCard';
 
 export type PostContainerProps = {
-  posts: PostCardProps[];
+  posts: Post[];
 };
 
 function PostCotainer({posts}: PostContainerProps) {
@@ -18,10 +19,11 @@ function PostCotainer({posts}: PostContainerProps) {
     <div className="grid gap-4 md:grid-cols-2">
       {posts.map(P => (
         <PostCard
-          category={P.category}
-          title={P.title}
-          body={P.body}
-          date={P.date}
+          categories={P.attributes.categories.data}
+          id={P.id}
+          title={P.attributes.title}
+          body={P.attributes.body}
+          date={P.attributes.updatedAt}
           key={P.id}
         />
       ))}

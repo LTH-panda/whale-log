@@ -19,7 +19,7 @@ function Modal({isVisible, onClickBackDrop, children}: ModalProps) {
       />
       <div
         className={`${
-          !isVisible && 'hidden -translate-y-3/4'
+          !isVisible && 'hidden -translate-y-3/4 '
         } absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-full z-20 flex justify-center items-center transition-transform`}>
         {children}
       </div>

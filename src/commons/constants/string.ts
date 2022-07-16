@@ -3,6 +3,9 @@ export const LOGOTYPE = 'Whale';
 // MainDoor
 export const MAIN_DOOR_TITLE = 'WELCOME';
 export const MAIN_DOOR_DESC = '[작성 예정]';
+// AboutDoor
+export const ABOUT_DOOR_TITLE = "I'm Whale";
+export const ABOUT_DOOR_DESC = '[작성 예정]';
 // Categoires
 export const CATEGORIES_TITLE = 'ALL';
 // PostContainer
