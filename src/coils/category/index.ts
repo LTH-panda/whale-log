@@ -4,7 +4,7 @@ export const categoryVisible = atom<boolean>({
   key: 'categoryVisible',
   default: false,
 });
-export const categoryCurrent = atom({
+export const categoryCurrent = atom<string>({
   key: 'categoryCurrent',
   default: 'ALL',
 });

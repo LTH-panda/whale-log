@@ -14,7 +14,7 @@ function Header({searchProps}: HeaderProps) {
         <Logo />
       </span>
       <Nav />
-      <Search {...searchProps} />
+      {/* <Search {...searchProps} /> */}
     </header>
   );
 }

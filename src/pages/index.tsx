@@ -13,13 +13,22 @@ function HomePage({
   posts: Post[];
   categories: Category[];
 }) {
-  const {isCategoryVisible, openCategory, closeCategory} = useCategory();
+  const {
+    isCategoryVisible,
+    categoryCurrent,
+    openCategory,
+    closeCategory,
+    setCategory,
+    resetCategory,
+  } = useCategory();
 
   const categoriesProps: CategoriesProps = {
+    title: categoryCurrent,
     onClick: openCategory,
     isVisible: isCategoryVisible,
     onClickBackDrop: closeCategory,
     categoriesData: categories,
+    onClickTag: e => setCategory(e.currentTarget.innerText),
   };
 
   return (

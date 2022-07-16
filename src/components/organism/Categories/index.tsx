@@ -1,5 +1,6 @@
 import {CATEGORIES_TITLE} from 'commons/constants/string';
 import {BottomSheet, Button, Tag} from 'components/atoms';
+import Link from 'next/link';
 import {Category} from 'pages';
 import React from 'react';
 
@@ -9,6 +10,7 @@ export type CategoriesProps = {
   isVisible: boolean;
   onClickBackDrop: React.MouseEventHandler<HTMLDivElement>;
   categoriesData: Category[];
+  onClickTag: React.MouseEventHandler<HTMLSpanElement>;
 };
 
 function Categories({
@@ -17,6 +19,7 @@ function Categories({
   isVisible,
   onClickBackDrop,
   categoriesData,
+  onClickTag,
 }: CategoriesProps) {
   return (
     <>
@@ -25,7 +28,21 @@ function Categories({
         <div className="flex flex-wrap items-start w-full gap-4 p-8 bg-white rounded-t-lg h-96 max-w-body">
           {categoriesData &&
             categoriesData.map(C => (
-              <Tag title={C.attributes.category} key={C.id} />
+              <Link
+                href={{
+                  pathname: '/explore/[category]',
+                  query: {category: C.attributes.category},
+                }}
+                // as={`/explore?category=${C.attributes.category}`}
+                passHref>
+                <a href="replace">
+                  <Tag
+                    title={C.attributes.category}
+                    onClick={onClickTag}
+                    key={C.id}
+                  />
+                </a>
+              </Link>
             ))}
         </div>
       </BottomSheet>
